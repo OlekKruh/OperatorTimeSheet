@@ -1,0 +1,155 @@
+Based on your requirements and the structure of your tables, you need to establish foreign key relationships to connect your tables appropriately. Here's how you can redefine your tables and relationships to ensure that the **TimeSheet** table displays exactly the values you want, while maintaining data integrity and normalization.
+
+---
+
+### **Updated Tables with Relationships**
+
+```sql
+Table User {
+  id uuid [pk]
+  access_login login_type
+  hash_pass char(60) [note: 'for bcrypt']
+}
+
+Enum login_type {
+  guest
+  operator
+  hand
+  admin
+}
+
+Table TimeSheet {
+  row_id int [pk]
+  date date
+  operator_id uuid [ref: > Operator.operator_id]
+  start_time time
+  order_id uuid [ref: > Order.order_id]
+  processing_side smallint
+  quantity_done smallint
+  note_description text
+  machine_id uuid [ref: > Machine.machine_id]
+  stop_time time
+}
+
+Table Operator {
+  operator_id uuid [pk]
+  operator_name varchar(12)
+  position varchar(12)
+}
+
+Table Company {
+  company_id uuid [pk]
+  company_title varchar(50)
+  company_country varchar(20)
+  company_shipping_address varchar(100)
+}
+
+Table Casing {
+  casing_id uuid [pk]
+  casing_title varchar(30)
+  casing_base bool
+  casing_cover bool
+  casing_filter_cover bool
+  casing_panel bool
+  casing_cap bool
+  casing_mask bool
+}
+
+Table Order {
+  order_id uuid [pk]
+  company_id uuid [ref: > Company.company_id]
+  casing_id uuid [ref: > Casing.casing_id]
+  variant varchar(30)
+  order_quantity smallint
+  processing_side smallint
+  note_description text
+  order_cost int
+}
+
+Table Machine {
+  machine_id uuid [pk]
+  machine_title varchar(12)
+  machine_serial_number varchar(20)
+  machine_manufacturer varchar(50)
+  machine_year_production date
+}
+```
+
+---
+
+### **Explanation of Relationships**
+
+1. **TimeSheet to Operator**
+   - **TimeSheet.operator_id** references **Operator.operator_id**
+   - This links each timesheet entry to the operator who performed the work.
+
+2. **TimeSheet to Order**
+   - **TimeSheet.order_id** references **Order.order_id**
+   - Connects the timesheet to the specific order being worked on.
+
+3. **TimeSheet to Machine**
+   - **TimeSheet.machine_id** references **Machine.machine_id**
+   - Identifies the machine used for the work session.
+
+4. **Order to Company**
+   - **Order.company_id** references **Company.company_id**
+   - Associates the order with the company that placed it.
+
+5. **Order to Casing**
+   - **Order.casing_id** references **Casing.casing_id**
+   - Specifies the casing involved in the order.
+
+---
+
+### **Key Points**
+
+- **Normalization**: By using foreign keys, we avoid data duplication and maintain data integrity across tables.
+- **Data Retrieval**: To display the exact values (e.g., company title, casing title) in the **TimeSheet** table, you can perform SQL JOIN operations when querying the data.
+- **Flexibility**: Including fields like **processing_side** and **quantity_done** in the **TimeSheet** allows tracking variations per work session.
+- **User Authentication**: The **User** table remains independent, serving authentication purposes without direct ties to operational data.
+
+---
+
+### **Sample Query to Retrieve TimeSheet Details**
+
+To display all the desired information from the **TimeSheet**, you can use a query like:
+
+```sql
+SELECT
+  ts.date,
+  op.operator_name,
+  ts.start_time,
+  co.company_title,
+  ca.casing_title,
+  o.variant,
+  o.order_quantity,
+  ts.processing_side,
+  ts.quantity_done,
+  ts.note_description,
+  m.machine_title,
+  ts.stop_time
+FROM
+  TimeSheet ts
+JOIN
+  Operator op ON ts.operator_id = op.operator_id
+JOIN
+  Order o ON ts.order_id = o.order_id
+JOIN
+  Company co ON o.company_id = co.company_id
+JOIN
+  Casing ca ON o.casing_id = ca.casing_id
+JOIN
+  Machine m ON ts.machine_id = m.machine_id;
+```
+
+---
+
+### **Additional Notes**
+
+- **TimeSheet Adjustments**: By referencing **Order** directly, you capture all related details like company, casing, and variant.
+- **Data Integrity**: Ensure that all UUIDs used in foreign keys exist in their respective primary tables to maintain referential integrity.
+- **Enum Usage**: The **login_type** enum helps manage user access levels within your application.
+
+---
+
+By restructuring your tables and establishing these relationships, your **TimeSheet** will effectively reflect all necessary details, and your database will be well-organized for efficient data management and retrieval.
