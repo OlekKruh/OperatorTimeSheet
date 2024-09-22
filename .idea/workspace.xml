@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/OperatorTimeSheet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBase/db_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBase/models.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/history_elements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/home_elements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/home_screen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/login_elements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/login_screen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/been/been.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/been/mysql_mk2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/been/notes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,12 +83,25 @@
       <workItem from="1726331539570" duration="61907000" />
       <workItem from="1726856475638" duration="3067000" />
       <workItem from="1727007770268" duration="2164000" />
-      <workItem from="1727014128057" duration="4025000" />
+      <workItem from="1727014128057" duration="4601000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1727020684072</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727020684072</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_elements.coverage" NAME="home_elements Coverage Results" MODIFIED="1726508444076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
