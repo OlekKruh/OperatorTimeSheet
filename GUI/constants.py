@@ -2,6 +2,9 @@
 test_username = "a"
 test_password = "a"
 
+# ___Text_width___
+text_width = 600
+
 # ___Colors___
 # RGB
 RED = '#FF0000'

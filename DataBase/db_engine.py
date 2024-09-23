@@ -1,8 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import os
+from dotenv import load_dotenv
 
-DATABASE_URL = 'PostgreSQL:///./database.db'  # По умолчанию создаем базу данных в текущей директории
+load_dotenv()
+
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://username:password@localhost:5432/kradex_ploter_db')
 
 
 def get_engine():
@@ -30,3 +33,8 @@ def init_db(engine, Base):
     """
     Base.metadata.create_all(engine)
     print("Таблицы успешно созданы.")
+
+
+def check_database():
+    return f'in progress'
+

@@ -1,6 +1,7 @@
 import flet as ft
 from .constants import *
 from .history_elements import history_elements
+from .settings_elements import settings_elements
 
 
 def home_elements(page: ft.Page):
@@ -108,7 +109,7 @@ def on_rail_change(e, content_column, page):
             #search_elements(content_column)
         case 5:
             content_column.controls.append(ft.Text("Это вкладка Setting"))
-            #settings_elements(content_column)
+            settings_elements(content_column)
         case 6:
             page.window_close()
 
