@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/GUI/settings_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/db_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/db_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/home_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/home_elements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/home_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/home_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/login_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/login_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/settings_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/settings_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,31 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.home_elements.executor": "Run",
-    "Python.home_screen.executor": "Run",
-    "Python.login_screen.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.settings_elements.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/MyProjects/OperatorTimeSheet/.venv/Scripts/python.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.home_elements.executor&quot;: &quot;Run&quot;,
+    &quot;Python.home_screen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login_screen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.settings_elements.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/MyProjects/OperatorTimeSheet/.venv/Scripts/python.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\MyProjects\OperatorTimeSheet\DataBase" />
@@ -126,7 +129,10 @@
       <workItem from="1727113848604" duration="110000" />
       <workItem from="1727113967536" duration="197000" />
       <workItem from="1727114173934" duration="133000" />
-      <workItem from="1727114315638" duration="2486000" />
+      <workItem from="1727114315638" duration="3800000" />
+      <workItem from="1727188332441" duration="2823000" />
+      <workItem from="1727285309664" duration="10748000" />
+      <workItem from="1727375675858" duration="154000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -144,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727020988899</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1727117146433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727117146433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +172,7 @@
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_elements.coverage" NAME="home_elements Coverage Results" MODIFIED="1726508444076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$settings_elements.coverage" NAME="settings_elements Coverage Results" MODIFIED="1727042220113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$login_screen.coverage" NAME="login_screen Coverage Results" MODIFIED="1726342261157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
-    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1727116615512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1727296890034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_screen.coverage" NAME="home_screen Coverage Results" MODIFIED="1726420612680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
   </component>
 </project>

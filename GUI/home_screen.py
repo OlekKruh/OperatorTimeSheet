@@ -5,7 +5,7 @@ from .constants import *
 
 def home_screen(page: ft.Page):
 
-    page.window_maximized = True
+    #page.window_maximized = True
     page.window_title_bar_hidden = False
     page.title = APP_TITLE
     page.bgcolor = WIGHT

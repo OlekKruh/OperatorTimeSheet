@@ -15,7 +15,7 @@ def login_elements(page: ft.Page):
         error_message.value = ""
         page.update()
 
-        if username_input.value == test_username and password_input.value == test_password:
+        if username_input.value == SUPER_USER and password_input.value == SUPER_USER_PASSWORD:
             home_screen(page)
         else:
             error_message.value = "Invalid username or password"

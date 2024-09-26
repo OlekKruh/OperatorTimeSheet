@@ -109,7 +109,7 @@ def on_rail_change(e, content_column, page):
             #search_elements(content_column)
         case 5:
             content_column.controls.append(ft.Text("Это вкладка Setting"))
-            settings_elements(content_column)
+            settings_elements(content_column, page)
         case 6:
             page.window_close()
 

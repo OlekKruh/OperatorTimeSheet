@@ -1,9 +1,9 @@
 # ___Test Login___
-test_username = "a"
-test_password = "a"
+SUPER_USER = "super_user"
+SUPER_USER_PASSWORD = "12345"
 
 # ___Text_width___
-text_width = 600
+TEXT_WIDTH = 600
 
 # ___Colors___
 # RGB

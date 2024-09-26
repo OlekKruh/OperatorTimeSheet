@@ -1,33 +1,48 @@
 import flet as ft
 from .constants import *
-from DataBase.db_engine import check_database
+from DataBase.db_engine import check_database, create_database, test_db_connection, save_db_settings, load_db_settings
 import socketserver
+
 
 with socketserver.TCPServer(("localhost", 0), None) as s:
     free_port = s.server_address[1]
 
 check_result_masege = ft.Text("")
 
+db_settings = load_db_settings()
 
-def check_database_request():
-    result = check_database()
-    check_result_masege.value = result
-    check_result_masege.update()
-
-
-def create_database_request():
-    pass
-
-
-def test_db_connection_request():
-    pass
-
-
-def seve_request():
-    pass
+if isinstance(db_settings, dict):
+    host_value = db_settings.get('host')
+    port_value = db_settings.get('port')
+    user_value = db_settings.get('user')
+    password_value = db_settings.get('password')
+    dbname_value = db_settings.get('dbname')
+else:
+    host_value = 'localhost'
+    port_value = f'{free_port}'
+    user_value = 'User'
+    password_value = '12345'
+    dbname_value = 'Kradex_Ploter_TimeSheet_db'
 
 
-def settings_elements(content_column: ft.Column):
+def handle_request(request_function, page, host, port, user, password, dbname):
+    result = request_function(host, port, user, password, dbname)
+
+    dialog = ft.AlertDialog(
+        content=ft.Text(result),
+        modal=True,
+        actions=[
+            ft.TextButton("Continue", on_click=lambda e: page.close(dialog))
+        ],
+        actions_alignment=ft.MainAxisAlignment.CENTER,
+    )
+
+    page.dialog = dialog
+    dialog.open = True
+    page.update()
+
+
+def settings_elements(content_column: ft.Column, page: ft.Page):
     content_column.controls.clear()
 
     header = ft.Container(
@@ -36,23 +51,21 @@ def settings_elements(content_column: ft.Column):
         alignment=ft.alignment.center_left,
     )
 
-    ip = ft.TextField(label="IP", color=WIGHT,
-                      border_color=WIGHT, width=text_width, )
-    host = ft.TextField(label="Host", color=WIGHT, value='localhost',
-                        border_color=WIGHT, width=text_width, )
-    port = ft.TextField(label="Port", color=WIGHT, value=f'{free_port}',
-                        border_color=WIGHT, width=text_width, )
-    user = ft.TextField(label="User", color=WIGHT, value='User',
-                        border_color=WIGHT, width=text_width, )
-    password = ft.TextField(label="Password", color=WIGHT, value='12345', password=True, can_reveal_password=True,
-                            border_color=WIGHT, width=text_width, )
-    dbname = ft.TextField(label="Database", color=WIGHT, value='Kradex_Ploter_TimeSheet_db',
-                          border_color=WIGHT, width=text_width, )
+    host = ft.TextField(label="Host", color=WIGHT, value=host_value,
+                        border_color=WIGHT, width=TEXT_WIDTH, )
+    port = ft.TextField(label="Port", color=WIGHT, value=port_value,
+                        border_color=WIGHT, width=TEXT_WIDTH, )
+    user = ft.TextField(label="User", color=WIGHT, value=user_value,
+                        border_color=WIGHT, width=TEXT_WIDTH, )
+    password = ft.TextField(label="Password", color=WIGHT, value=password_value,
+                            password=True, can_reveal_password=True,
+                            border_color=WIGHT, width=TEXT_WIDTH, )
+    dbname = ft.TextField(label="Database", color=WIGHT, value=dbname_value,
+                          border_color=WIGHT, width=TEXT_WIDTH, )
 
     textfield_container = ft.Container(
         ft.Column(
             [
-                ip,
                 host,
                 port,
                 user,
@@ -63,10 +76,38 @@ def settings_elements(content_column: ft.Column):
         margin=ft.margin.only(left=20),
     )
 
-    buton_check_database = ft.FilledButton(text="Check for database", on_click=lambda e: check_database_request())
-    buton_create_database = ft.FilledButton(text="Create database", on_click=lambda e: create_database_request())
-    buton_test_connection = ft.FilledButton(text="Test DB connection", on_click=lambda e: test_db_connection_request())
-    save_settings = ft.FilledButton(text="Save", on_click=lambda e: seve_request())
+    buton_check_database = ft.FilledButton(text="Check for database",
+                                           on_click=lambda e:
+                                           handle_request(check_database, page,
+                                                          host.value,
+                                                          port.value,
+                                                          user.value,
+                                                          password.value,
+                                                          dbname.value))
+    buton_create_database = ft.FilledButton(text="Create database",
+                                            on_click=lambda e:
+                                            handle_request(create_database, page,
+                                                           host.value,
+                                                           port.value,
+                                                           user.value,
+                                                           password.value,
+                                                           dbname.value))
+    buton_test_connection = ft.FilledButton(text="Test DB connection",
+                                            on_click=lambda e:
+                                            handle_request(test_db_connection, page,
+                                                           host.value,
+                                                           port.value,
+                                                           user.value,
+                                                           password.value,
+                                                           dbname.value))
+    save_settings = ft.FilledButton(text="Save",
+                                    on_click=lambda e:
+                                    handle_request(save_db_settings, page,
+                                                   host.value,
+                                                   port.value,
+                                                   user.value,
+                                                   password.value,
+                                                   dbname.value))
 
     buttons_container = ft.Container(
         ft.Row(
@@ -91,6 +132,7 @@ def settings_elements(content_column: ft.Column):
             spacing=10,
         ),
         alignment=ft.alignment.top_left,
+
     )
 
     content_column.controls.append(content_container)
