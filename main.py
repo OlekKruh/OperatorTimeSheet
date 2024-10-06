@@ -1,7 +1,7 @@
 import flet as ft
 from flet_core import TextAlign
-
 from GUI.login_screen import login_screen
+from GUI.home_screen import home_screen
 from DataBase.db_engine import load_db_settings
 
 
@@ -24,11 +24,13 @@ def main(page: ft.Page):
     db_settings = load_db_settings()
 
     if isinstance(db_settings, dict):
-        login_screen(page)  # Call login screen
+        home_screen(page)
+        #login_screen(page)  # Call login screen
     else:
         page.dialog = dialog
         dialog.open = True
-        login_screen(page)
+        home_screen(page)
+        #login_screen(page)
         page.update()
 
 

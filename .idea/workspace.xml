@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/db_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/db_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/home_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/home_elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/home_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/home_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/login_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/login_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/models.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/settings_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/settings_elements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -47,9 +46,10 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.settings_elements.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/MyProjects/OperatorTimeSheet/.venv/Scripts/python.exe&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/MyProjects/OperatorTimeSheet/GUI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -66,6 +66,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProjects\OperatorTimeSheet\GUI" />
       <recent name="D:\MyProjects\OperatorTimeSheet\DataBase" />
       <recent name="D:\MyProjects\OperatorTimeSheet\been" />
     </key>
@@ -133,6 +134,12 @@
       <workItem from="1727188332441" duration="2823000" />
       <workItem from="1727285309664" duration="10748000" />
       <workItem from="1727375675858" duration="154000" />
+      <workItem from="1727375840757" duration="5580000" />
+      <workItem from="1727455447988" duration="4726000" />
+      <workItem from="1727521042770" duration="11735000" />
+      <workItem from="1727607505969" duration="8073000" />
+      <workItem from="1727629065364" duration="5782000" />
+      <workItem from="1728207123623" duration="4215000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -158,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727117146433</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1727376064097</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727376064098</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +187,7 @@
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_elements.coverage" NAME="home_elements Coverage Results" MODIFIED="1726508444076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$settings_elements.coverage" NAME="settings_elements Coverage Results" MODIFIED="1727042220113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$login_screen.coverage" NAME="login_screen Coverage Results" MODIFIED="1726342261157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
-    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1727296890034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1727633825839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_screen.coverage" NAME="home_screen Coverage Results" MODIFIED="1726420612680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
   </component>
 </project>

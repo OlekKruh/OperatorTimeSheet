@@ -1,7 +1,7 @@
 import flet as ft
 from .constants import *
-from .history_elements import history_elements
-from .settings_elements import settings_elements
+from .history_container import history_elements
+from .settings_container import settings_elements
 
 
 def home_elements(page: ft.Page):
