@@ -4,13 +4,14 @@ from .constants import *
 
 
 def login_screen(page: ft.Page):
+    """
+    Sets up and displays the login screen for the application.
 
-    # Centering the window
-    page.window_width = LOGIN_WINDOW_WIDTH
-    page.window_height = LOGIN_WINDOW_HEIGHT
-    page.window_center()
+    Args:
+        page (ft.Page): The page object where the login screen will be rendered.
+    """
 
-    # Login window settings
+    page.window_maximized = True
     page.window_title_bar_hidden = True
     page.title = APP_TITLE
     page.bgcolor = ROJAL_MARIN

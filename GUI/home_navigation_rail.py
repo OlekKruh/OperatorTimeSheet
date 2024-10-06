@@ -5,10 +5,21 @@ from .settings_container import settings_elements
 
 
 def home_elements(page: ft.Page):
+    """
+    Sets up the main Home Screen of the application with a persistent
+    Navigation Rail, and a default display of history elements.
+
+    Args:
+        page (ft. Page): The Flet page object that will display the home screen.
+    """
+
+    # Clean the page before adding new elements
     page.clean()
 
+    # Create a column to display the content based on the selected tab
     content_column = ft.Column()
 
+    # Define the NavigationRail with its destinations
     rail = ft.NavigationRail(
         selected_index=0,
         label_type=ft.NavigationRailLabelType.ALL,
@@ -56,6 +67,7 @@ def home_elements(page: ft.Page):
         on_change=lambda e: on_rail_change(e, content_column, page),
     )
 
+    # Add the Navigation Rail and content column to the page layout
     page.add(
         ft.Row(
             [
@@ -82,35 +94,56 @@ def home_elements(page: ft.Page):
         )
     )
 
+    # Display history elements by default
     history_elements(content_column)
 
+    # Update the page to reflect the new layout
     page.update()
 
 
 def on_rail_change(e, content_column, page):
+    """
+    Handles the logic for updating the content area when a new tab is selected
+    in the NavigationRail.
+
+    Args:
+        e: Event object containing the selected tab index.
+        content_column (ft. Column): The column to display the selected tab's content.
+        Page (ft. Page): The Flet page object to allow window control actions like closing.
+    """
     selected_index = e.control.selected_index
 
+    # Clear the current content
     content_column.controls.clear()
 
+    # Switch based on the selected index
     match selected_index:
         case 0:
+            # History tab
             history_elements(content_column)
         case 1:
-            content_column.controls.append(ft.Text("Это вкладка Input"))
-            #input_elements(content_column)
+            # Input tab
+            content_column.controls.append(ft.Text("Input"))
+            # input_elements(content_column)
         case 2:
-            content_column.controls.append(ft.Text("Это вкладка Statistics"))
-            #statistics_elements(content_column)
+            # Statistics tab
+            content_column.controls.append(ft.Text("Statistics"))
+            # statistics_elements(content_column)
         case 3:
-            content_column.controls.append(ft.Text("Это вкладка Create Project"))
-            #create_project_elements(content_column)
+            # Create Project tab
+            content_column.controls.append(ft.Text("Project"))
+            # create_project_elements(content_column)
         case 4:
-            content_column.controls.append(ft.Text("Это вкладка Search"))
-            #search_elements(content_column)
+            # Search tab
+            content_column.controls.append(ft.Text("Search"))
+            # search_elements(content_column)
         case 5:
-            content_column.controls.append(ft.Text("Это вкладка Setting"))
+            # Settings tab
+            content_column.controls.append(ft.Text("Setting"))
             settings_elements(content_column, page)
         case 6:
+            # Exit the application
             page.window_close()
 
+    # Update the content column with the new content
     content_column.update()

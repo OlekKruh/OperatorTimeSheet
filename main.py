@@ -25,12 +25,12 @@ def main(page: ft.Page):
 
     if isinstance(db_settings, dict):
         home_screen(page)
-        #login_screen(page)  # Call login screen
+        # login_screen(page)
     else:
         page.dialog = dialog
         dialog.open = True
         home_screen(page)
-        #login_screen(page)
+        # login_screen(page)
         page.update()
 
 

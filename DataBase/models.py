@@ -87,7 +87,7 @@ class ChangeLog(Base):
     table_name = Column(VARCHAR(50), nullable=False)
     record_id = Column(Integer, nullable=False)
     operation_type = Column(VARCHAR(10), nullable=False)
-    changed_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+    changed_at = Column(DateTime, default=datetime.datetime.now(datetime.UTC), nullable=False)
     user_id = Column(Integer, ForeignKey('User.user_id', ondelete='CASCADE'), nullable=False)
     old_values = Column(VARCHAR(1000), nullable=False)
     new_values = Column(VARCHAR(1000), nullable=False)
