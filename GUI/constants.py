@@ -1,6 +1,6 @@
 # ___Test Login___
 SUPER_USER = "super_user"
-SUPER_USER_PASSWORD = "12345"
+SUPER_USER_PASS_HASH = "$2y$10$INji6S5vPxICxM69q.mve.1Z9H8DFztjJ/jGwCBh/EGa0tVTjaQCa"
 
 # ___Text_width___
 TEXT_WIDTH = 600
@@ -18,6 +18,7 @@ BLACK = '#000000'
 # Special
 ROJAL_MARIN = '#013E7F'
 WIGHT = '#FFFFFF'
+GOLD = '#FFD700'
 
 # ___Title___
 APP_TITLE = 'Operator Timesheet'

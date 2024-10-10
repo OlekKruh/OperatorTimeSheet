@@ -1,9 +1,9 @@
 import flet as ft
-from .home_navigation_rail import home_elements
-from .constants import *
+from GUI.Home_UI.home_navigation_rail import home_elements
+from GUI.constants import *
 
 
-def home_screen(page: ft.Page):
+def home_screen(page: ft.Page, user_role: str):
     """
     Sets up and displays the home screen for the application. Configures window settings
     such as minimum size, title and background color, and loads the home screen elements.
@@ -13,9 +13,8 @@ def home_screen(page: ft.Page):
     """
 
     # Configure window settings
-    # page.window_maximized = True # Uncomment in end
-    # page.window_title_bar_hidden = True # Uncomment in end
-    page.window_title_bar_hidden = False  # Coment in end
+    page.window_maximized = False
+    page.window_title_bar_hidden = False
     page.title = APP_TITLE
     page.bgcolor = WIGHT
 
@@ -24,6 +23,6 @@ def home_screen(page: ft.Page):
     page.window_min_height = 800
 
     # Load and display the home screen elements
-    home_elements(page)
+    home_elements(page, user_role)
 
     page.update()

@@ -1,5 +1,5 @@
 import flet as ft
-from .constants import *
+from GUI.constants import *
 from DataBase.db_engine import create_database, test_db_connection, save_db_settings, load_db_settings
 
 # A message placeholder for displaying the result of operations
@@ -25,7 +25,7 @@ def handle_request(request_function, page, db_settings):
 
     Args:
         request_function (callable): The function to execute (e.g., creating the database, testing connection).
-        page (ft.Page): The page on which to display the result dialog.
+        page (ft. Page): The page on which to display the result dialog.
         db_settings (dict): Dictionary containing database settings to pass to the request function.
     """
 

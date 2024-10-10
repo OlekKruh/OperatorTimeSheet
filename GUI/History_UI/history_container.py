@@ -1,5 +1,5 @@
 import flet as ft
-from .constants import *
+from GUI.constants import *
 
 
 def history_elements(content_column: ft.Column):
