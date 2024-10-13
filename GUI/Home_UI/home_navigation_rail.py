@@ -28,7 +28,7 @@ def home_elements(page: ft.Page, user_role: str):
         group_alignment=0,
         min_width=50,
         bgcolor=ROJAL_MARIN,
-        indicator_color=WIGHT,
+        indicator_color=ft.colors.WHITE,
         destinations=[
             ft.NavigationRailDestination(
                 icon_content=ft.Icon(ft.icons.HISTORY),
@@ -61,8 +61,8 @@ def home_elements(page: ft.Page, user_role: str):
                 label_content=ft.Text("Settings")
             ),
             ft.NavigationRailDestination(
-                icon_content=ft.Icon(ft.icons.LOGOUT, color=RED),
-                selected_icon_content=ft.Icon(ft.icons.LOGOUT, color=RED),
+                icon_content=ft.Icon(ft.icons.LOGOUT, color=ft.colors.RED),
+                selected_icon_content=ft.Icon(ft.icons.LOGOUT, color=ft.colors.RED),
                 label_content=ft.Text("Exit")
             ),
         ],

@@ -22,9 +22,9 @@ def history_elements(content_column: ft.Column):
         rows=[],  # Здесь должны быть ваши строки с данными
         column_spacing=10,
         data_text_style=ft.TextStyle(size=12),
-        border=ft.border.all(1, WIGHT),
+        border=ft.border.all(1, ft.colors.WHITE),
         border_radius=10,
-        vertical_lines=ft.BorderSide(1, WIGHT),
+        vertical_lines=ft.BorderSide(1, ft.colors.WHITE),
     )
 
     # Добавляем таблицу в ListView для возможности прокрутки

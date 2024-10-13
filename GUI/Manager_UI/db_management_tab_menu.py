@@ -1,4 +1,5 @@
 import flet as ft
+from .expansion_tiles_for_tab_menu import create_expansion_tile
 
 name = 'DB manager'
 
@@ -12,46 +13,36 @@ def db_management_tab_menu(user_role: str):
         user_role: The role of the logged-in user ('admin', 'superuser', 'manager', 'operator').
     """
 
-    # Function to generate scrollable content for each tab
-    def tab_content(tab_name):
-        return ft.Container(
-            content=ft.Column(
-                controls=[ft.Text(f"{tab_name} content line {i}") for i in range(50)],  # Example long content
-                scroll=ft.ScrollMode.AUTO  # Enable scroll if content exceeds available height
-            ),
-            expand=True  # Allow the content to expand to the container size
-        )
-
     # Create a list of tabs that are always visible
     tabs = [
         ft.Tab(
-            text='Order',
-            content=tab_content("Order"),
+            text='Orders',
+            content=create_expansion_tile("Orders"),
             icon=ft.icons.BORDER_COLOR,
         ),
         ft.Tab(
             text='Enclosure',
-            content=tab_content("Enclosure"),
+            content=create_expansion_tile("Enclosure"),
             icon=ft.icons.ALL_INBOX,
         ),
         ft.Tab(
             text='TimeSheet',
-            content=tab_content("TimeSheet"),
+            content=create_expansion_tile("TimeSheet"),
             icon=ft.icons.TABLE_ROWS_ROUNDED,
         ),
         ft.Tab(
             text='Companies',
-            content=tab_content("Companies management in progress"),
+            content=create_expansion_tile("Companies"),
             icon=ft.icons.HOME_WORK_SHARP,
         ),
         ft.Tab(
             text='Operators',
-            content=tab_content("Operators management in progress"),
+            content=create_expansion_tile("Operators"),
             icon=ft.icons.PEOPLE_SHARP,
         ),
         ft.Tab(
             text='Machines',
-            content=tab_content("Machine management in progress"),
+            content=create_expansion_tile("Machines"),
             icon=ft.icons.DRAW
         ),
     ]
@@ -61,14 +52,14 @@ def db_management_tab_menu(user_role: str):
         tabs.append(
             ft.Tab(
                 text='Users',
-                content=tab_content("Users"),
+                content=create_expansion_tile("Users"),
                 icon=ft.icons.PERSON,
             )
         )
         tabs.append(
             ft.Tab(
                 text='ChangeLog',
-                content=tab_content("ChangeLog"),
+                content=create_expansion_tile("ChangeLog"),
                 icon=ft.icons.HISTORY,
             )
         )

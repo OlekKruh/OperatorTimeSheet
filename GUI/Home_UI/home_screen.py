@@ -16,7 +16,7 @@ def home_screen(page: ft.Page, user_role: str):
     page.window_maximized = False
     page.window_title_bar_hidden = False
     page.title = APP_TITLE
-    page.bgcolor = WIGHT
+    page.bgcolor = ft.colors.WHITE
 
     # Minimum dimensions of the window to ensure proper display
     page.window_min_width = 1280

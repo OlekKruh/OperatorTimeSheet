@@ -5,25 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/GUI/History_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Home_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Login_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Manager_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Manager_UI/db_management_tab_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Search_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Settings_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Statistics_UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Timesheet_UI/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/Manager_UI/forms_create_modify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/History_UI/history_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/History_UI/history_container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/home_navigation_rail.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Home_UI/home_navigation_rail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/home_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Home_UI/home_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/db_management_tab_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/db_management_tab_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/history_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/History_UI/history_container.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/home_navigation_rail.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Home_UI/home_navigation_rail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/home_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Home_UI/home_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/login_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Login_UI/login_container.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/login_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Login_UI/login_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/settings_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Settings_UI/settings_container.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +151,11 @@
       <workItem from="1728497125308" duration="601000" />
       <workItem from="1728501119247" duration="5647000" />
       <workItem from="1728581838608" duration="5347000" />
-      <workItem from="1728587362761" duration="6544000" />
+      <workItem from="1728587362761" duration="7442000" />
+      <workItem from="1728671648825" duration="2156000" />
+      <workItem from="1728733534414" duration="11067000" />
+      <workItem from="1728806115764" duration="13827000" />
+      <workItem from="1728852316513" duration="640000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -212,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728238994195</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1728596108667</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728596108667</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,11 +223,22 @@
     <MESSAGE value="First Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GUI/Manager_UI/db_management_tab_menu.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_elements.coverage" NAME="home_elements Coverage Results" MODIFIED="1726508444076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$settings_elements.coverage" NAME="settings_elements Coverage Results" MODIFIED="1727042220113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$login_screen.coverage" NAME="login_screen Coverage Results" MODIFIED="1726342261157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
-    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1728595683556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1728852261281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_screen.coverage" NAME="home_screen Coverage Results" MODIFIED="1726420612680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
   </component>
 </project>
