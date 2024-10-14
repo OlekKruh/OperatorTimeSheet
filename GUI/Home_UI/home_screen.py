@@ -10,6 +10,7 @@ def home_screen(page: ft.Page, user_role: str):
 
     Args:
         page (ft. Page): The page object where the home screen will be rendered.
+        user_role (str): Role of the logged-in user ('admin', 'manager', 'operator').
     """
 
     # Configure window settings

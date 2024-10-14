@@ -17,7 +17,7 @@ class Operator(Base):
     __tablename__ = 'operator'
     operator_id = Column(Integer, primary_key=True, autoincrement=True)
     operator_name = Column(VARCHAR(12), nullable=False)
-    position = Column(VARCHAR(12), nullable=False)
+    skill = Column(VARCHAR(12), nullable=False)
 
 
 class Company(Base):
@@ -36,6 +36,12 @@ class Enclosure(Base):
     enclosure_id = Column(Integer, primary_key=True, autoincrement=True)
     sap_id = Column(VARCHAR, nullable=False, unique=True)
     enclosure_title = Column(VARCHAR(30), nullable=False)
+    base = Column(SmallInteger, nullable=False)
+    cover = Column(SmallInteger, nullable=False)
+    panel = Column(SmallInteger, nullable=False)
+    filter = Column(SmallInteger, nullable=False)
+    slot_mask = Column(SmallInteger, nullable=False)
+    pcb = Column(SmallInteger, nullable=False)
 
 
 class Machine(Base):
@@ -73,6 +79,8 @@ class TimeSheet(Base):
     order_id = Column(Integer, ForeignKey('order.order_id'), nullable=False)
     operation = Column(SmallInteger, nullable=False)
     quantity_done = Column(SmallInteger, nullable=False)
+    damaged_enclosures = Column(SmallInteger, nullable=False)
+    cause_of_damage = Column(VARCHAR(10), nullable=False)
     note_description = Column(VARCHAR(250), nullable=True)
     machine_id = Column(Integer, ForeignKey('machine.machine_id'), nullable=False)
 

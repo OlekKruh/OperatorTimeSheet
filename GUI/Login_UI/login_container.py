@@ -83,14 +83,14 @@ def login_elements(page: ft.Page):
 
     # Login button, which triggers the check_login function
     login_button = ft.ElevatedButton(text="Login", on_click=check_login,
-                                     width=100, bgcolor=WIGHT, color=ROJAL_MARIN)
+                                     width=100, bgcolor=ft.colors.WHITE, color=ROJAL_MARIN)
 
     # Cancel button, which closes the window when clicked
     cancel_button = ft.ElevatedButton(text="Exit", on_click=lambda _: page.window_close(),
-                                      width=100, bgcolor=WIGHT, color=ROJAL_MARIN)
+                                      width=100, bgcolor=ft.colors.WHITE, color=ROJAL_MARIN)
 
     # Text element to display error messages, initially empty
-    error_message = ft.Text(value="", color=RED, size=12)
+    error_message = ft.Text(value="", color=ft.colors.RED, size=12)
 
     # Arrange the input fields and buttons in a column, centered on the page
     column = ft.Column(

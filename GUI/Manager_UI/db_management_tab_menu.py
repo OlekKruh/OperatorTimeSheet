@@ -1,5 +1,5 @@
 import flet as ft
-from .expansion_tiles_for_tab_menu import create_expansion_tile
+from .expansion_tiles_for_tab_menu import create_new_expansion_tile, delete_update_expansion_tile
 
 name = 'DB manager'
 
@@ -16,33 +16,63 @@ def db_management_tab_menu(user_role: str):
     # Create a list of tabs that are always visible
     tabs = [
         ft.Tab(
+            text='TimeSheet',
+            content=delete_update_expansion_tile("TimeSheet"),
+            icon=ft.icons.TABLE_ROWS_ROUNDED,
+        ),
+        ft.Tab(
             text='Orders',
-            content=create_expansion_tile("Orders"),
+            content=ft.Column(
+                controls=[
+                    create_new_expansion_tile("Orders"),
+                    delete_update_expansion_tile("Orders")
+                ],
+                scroll=ft.ScrollMode.ALWAYS
+            ),
             icon=ft.icons.BORDER_COLOR,
         ),
         ft.Tab(
             text='Enclosure',
-            content=create_expansion_tile("Enclosure"),
+            content=ft.Column(
+                controls=[
+                    create_new_expansion_tile("Enclosure"),
+                    delete_update_expansion_tile("Enclosure")
+                ],
+                scroll=ft.ScrollMode.ALWAYS
+            ),
             icon=ft.icons.ALL_INBOX,
         ),
         ft.Tab(
-            text='TimeSheet',
-            content=create_expansion_tile("TimeSheet"),
-            icon=ft.icons.TABLE_ROWS_ROUNDED,
-        ),
-        ft.Tab(
             text='Companies',
-            content=create_expansion_tile("Companies"),
+            content=ft.Column(
+                controls=[
+                    create_new_expansion_tile("Companies"),
+                    delete_update_expansion_tile("Companies")
+                ],
+                scroll=ft.ScrollMode.ALWAYS
+            ),
             icon=ft.icons.HOME_WORK_SHARP,
         ),
         ft.Tab(
             text='Operators',
-            content=create_expansion_tile("Operators"),
+            content=ft.Column(
+                controls=[
+                    create_new_expansion_tile("Operators"),
+                    delete_update_expansion_tile("Operators")
+                ],
+                scroll=ft.ScrollMode.ALWAYS
+            ),
             icon=ft.icons.PEOPLE_SHARP,
         ),
         ft.Tab(
             text='Machines',
-            content=create_expansion_tile("Machines"),
+            content=ft.Column(
+                controls=[
+                    create_new_expansion_tile("Machines"),
+                    delete_update_expansion_tile("Machines")
+                ],
+                scroll=ft.ScrollMode.ALWAYS
+            ),
             icon=ft.icons.DRAW
         ),
     ]
@@ -52,14 +82,22 @@ def db_management_tab_menu(user_role: str):
         tabs.append(
             ft.Tab(
                 text='Users',
-                content=create_expansion_tile("Users"),
+                content=ft.Column(
+                    controls=[
+                        create_new_expansion_tile("Users"),
+                        delete_update_expansion_tile("Users")
+                    ],
+                    scroll=ft.ScrollMode.ALWAYS
+                ),
                 icon=ft.icons.PERSON,
             )
         )
         tabs.append(
             ft.Tab(
                 text='ChangeLog',
-                content=create_expansion_tile("ChangeLog"),
+                content=ft.ListTile(
+                    title=ft.Text("ChangeLog viewing is currently under development")
+                ),
                 icon=ft.icons.HISTORY,
             )
         )

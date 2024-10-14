@@ -62,23 +62,23 @@ def settings_elements(content_column: ft.Column, page: ft.Page):
 
     # Header text for the database settings section
     header = ft.Container(
-        content=ft.Text("DataBase location", size=16, color=WIGHT),
+        content=ft.Text("DataBase location", size=16, color=ft.colors.WHITE),
         padding=ft.padding.all(20),
         alignment=ft.alignment.center_left,
     )
 
     # Text fields for database settings with default or loaded values
-    host = ft.TextField(label="Host", color=WIGHT, value=db_settings.get('host'),
-                        border_color=WIGHT, width=TEXT_WIDTH, )
-    port = ft.TextField(label="Port", color=WIGHT, value=db_settings.get('port'),
-                        border_color=WIGHT, width=TEXT_WIDTH, )
-    user = ft.TextField(label="User", color=WIGHT, value=db_settings.get('user'),
-                        border_color=WIGHT, width=TEXT_WIDTH, )
-    password = ft.TextField(label="Password", color=WIGHT, value=db_settings.get('password'),
+    host = ft.TextField(label="Host", color=ft.colors.WHITE, value=db_settings.get('host'),
+                        border_color=ft.colors.WHITE, width=TEXT_WIDTH, )
+    port = ft.TextField(label="Port", color=ft.colors.WHITE, value=db_settings.get('port'),
+                        border_color=ft.colors.WHITE, width=TEXT_WIDTH, )
+    user = ft.TextField(label="User", color=ft.colors.WHITE, value=db_settings.get('user'),
+                        border_color=ft.colors.WHITE, width=TEXT_WIDTH, )
+    password = ft.TextField(label="Password", color=ft.colors.WHITE, value=db_settings.get('password'),
                             password=True, can_reveal_password=True,
-                            border_color=WIGHT, width=TEXT_WIDTH, )
-    dbname = ft.TextField(label="Database", color=WIGHT, value=db_settings.get('dbname'),
-                          border_color=WIGHT, width=TEXT_WIDTH, )
+                            border_color=ft.colors.WHITE, width=TEXT_WIDTH, )
+    dbname = ft.TextField(label="Database", color=ft.colors.WHITE, value=db_settings.get('dbname'),
+                          border_color=ft.colors.WHITE, width=TEXT_WIDTH, )
 
     # Container for the text fields
     textfield_container = ft.Container(
