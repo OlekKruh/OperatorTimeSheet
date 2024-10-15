@@ -1,8 +1,8 @@
 import json
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy_utils import database_exists, create_database as create_new_database
-from sqlalchemy.orm import sessionmaker
 from DataBase.models import Base
 
 
@@ -25,6 +25,15 @@ def get_connection(engine):
     try:
         conn = engine.connect()
         return conn
+    except SQLAlchemyError as e:
+        raise Exception(f'Error connecting to database: {e}')
+
+
+def get_session(engine):
+    try:
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        return session
     except SQLAlchemyError as e:
         raise Exception(f'Error connecting to database: {e}')
 

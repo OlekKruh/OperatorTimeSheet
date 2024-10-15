@@ -17,7 +17,9 @@ def db_management_tab_menu(user_role: str):
     tabs = [
         ft.Tab(
             text='TimeSheet',
-            content=delete_update_expansion_tile("TimeSheet"),
+            content=ft.ListTile(
+                    title=ft.Text("TimeSheet viewing is currently under development")
+                ),
             icon=ft.icons.TABLE_ROWS_ROUNDED,
         ),
         ft.Tab(

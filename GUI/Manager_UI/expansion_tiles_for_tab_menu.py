@@ -1,5 +1,5 @@
 import flet as ft
-from .forms_create_modify import user_form, company_form, enclosure_form, machine_form, order_form, operator_form
+from .forms import user_form, company_form, enclosure_form, machine_form, order_form, operator_form
 
 
 def create_new_expansion_tile(tab_title: str):
@@ -20,9 +20,8 @@ def create_new_expansion_tile(tab_title: str):
         controls=[
             ft.ListTile(
                 title=ft.Text(f'Fill out the form to create a new {tab_title}.\nAll fields must be completed.')),
-            form_selection(tab_title)  # Предполагается, что эта функция уже существует и возвращает форму
+            form_selection(tab_title)
         ]
-
     )
 
 
