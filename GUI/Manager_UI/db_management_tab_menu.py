@@ -1,5 +1,13 @@
 import flet as ft
 from .expansion_tiles_for_tab_menu import create_new_expansion_tile, delete_update_expansion_tile
+from .validate_prepare_forms import (
+    validate_user_form,
+    validate_order_form,
+    validate_enclosure_form,
+    validate_company_form,
+    validate_operator_form,
+    validate_machine_form
+)
 
 name = 'DB manager'
 
@@ -26,7 +34,7 @@ def db_management_tab_menu(user_role: str):
             text='Orders',
             content=ft.Column(
                 controls=[
-                    create_new_expansion_tile("Orders"),
+                    create_new_expansion_tile("Orders", validate_order_form),
                     delete_update_expansion_tile("Orders")
                 ],
                 scroll=ft.ScrollMode.ALWAYS
@@ -37,7 +45,7 @@ def db_management_tab_menu(user_role: str):
             text='Enclosure',
             content=ft.Column(
                 controls=[
-                    create_new_expansion_tile("Enclosure"),
+                    create_new_expansion_tile("Enclosure", validate_enclosure_form),
                     delete_update_expansion_tile("Enclosure")
                 ],
                 scroll=ft.ScrollMode.ALWAYS
@@ -48,7 +56,7 @@ def db_management_tab_menu(user_role: str):
             text='Companies',
             content=ft.Column(
                 controls=[
-                    create_new_expansion_tile("Companies"),
+                    create_new_expansion_tile("Companies", validate_company_form),
                     delete_update_expansion_tile("Companies")
                 ],
                 scroll=ft.ScrollMode.ALWAYS
@@ -59,7 +67,7 @@ def db_management_tab_menu(user_role: str):
             text='Operators',
             content=ft.Column(
                 controls=[
-                    create_new_expansion_tile("Operators"),
+                    create_new_expansion_tile("Operators", validate_operator_form),
                     delete_update_expansion_tile("Operators")
                 ],
                 scroll=ft.ScrollMode.ALWAYS
@@ -70,7 +78,7 @@ def db_management_tab_menu(user_role: str):
             text='Machines',
             content=ft.Column(
                 controls=[
-                    create_new_expansion_tile("Machines"),
+                    create_new_expansion_tile("Machines", validate_machine_form),
                     delete_update_expansion_tile("Machines")
                 ],
                 scroll=ft.ScrollMode.ALWAYS
@@ -86,7 +94,7 @@ def db_management_tab_menu(user_role: str):
                 text='Users',
                 content=ft.Column(
                     controls=[
-                        create_new_expansion_tile("Users"),
+                        create_new_expansion_tile("Users", validate_user_form),
                         delete_update_expansion_tile("Users")
                     ],
                     scroll=ft.ScrollMode.ALWAYS
