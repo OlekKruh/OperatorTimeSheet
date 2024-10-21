@@ -53,11 +53,11 @@ def create_save_button(form_fields_list, validate_func, model):
     )
 
 
-def create_clear_button(fields_list):
+def create_clear_button(form_fields_list):
     """Создаёт кнопку 'Clear', которая сбрасывает значения полей формы на значения по умолчанию."""
     return ft.FilledButton(
         text='Clear',
-        on_click=lambda e: clear_form_fields(fields_list),
+        on_click=lambda e: clear_form_fields(form_fields_list),
         style=ft.ButtonStyle(
             color=ft.colors.BLACK,
             bgcolor=ft.colors.WHITE,

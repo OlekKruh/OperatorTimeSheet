@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/db_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/db_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/crud_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/crud_buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/validate_prepare_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/validate_prepare_forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Settings_UI/settings_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Settings_UI/settings_container.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +160,7 @@
       <workItem from="1729263531176" duration="622000" />
       <workItem from="1729426711094" duration="98000" />
       <workItem from="1729426817264" duration="9421000" />
-      <workItem from="1729528090384" duration="4188000" />
+      <workItem from="1729528090384" duration="4572000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -256,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729113038641</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1729537668657</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729537668657</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +272,7 @@
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_elements.coverage" NAME="home_elements Coverage Results" MODIFIED="1726508444076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$settings_elements.coverage" NAME="settings_elements Coverage Results" MODIFIED="1727042220113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$login_screen.coverage" NAME="login_screen Coverage Results" MODIFIED="1726342261157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
-    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1729537478159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1729537864360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_screen.coverage" NAME="home_screen Coverage Results" MODIFIED="1726420612680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
   </component>
 </project>

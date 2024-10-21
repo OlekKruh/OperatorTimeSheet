@@ -1,6 +1,6 @@
 import flet as ft
 from DataBase.models import Order, Company, Operator, Machine, Enclosure, Users
-from .crud_buttons import create_save_button, clear_form_fields
+from .crud_buttons import create_save_button, create_clear_button
 from .forms import (
     order_form_fields_list,
     enclosure_form_fields_list,
@@ -72,10 +72,7 @@ def create_new_expansion_tile(tab_title: str, validate_form):
 
     # Создаём кнопку Save, передаём список полей для валидации
     save_button = create_save_button(form_fields_list, validate_func, model)
-    clear_button = ft.FilledButton(
-        text='Clear',
-        on_click=lambda e: clear_form_fields(form_fields_list)  # Передаём список полей, а не событие
-    )
+    clear_button = create_clear_button(form_fields_list)
 
     # Создаём контейнер с кнопками в ряд
     buttons_row = ft.Row(
@@ -89,6 +86,7 @@ def create_new_expansion_tile(tab_title: str, validate_form):
         affinity=ft.TileAffinity.LEADING,
         collapsed_text_color=ft.colors.WHITE,
         text_color=ft.colors.WHITE,
+        initially_expanded=True,
         controls=[
             ft.ListTile(
                 title=ft.Text(f'Fill out the form to create a new {tab_title}.\nAll fields must be completed.')),
