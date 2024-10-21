@@ -19,18 +19,17 @@ if not isinstance(db_settings, dict):
     }
 
 
-def handle_request(request_function, page, db_settings):
+def handle_request(request_function, page):
     """
     Handles database-related requests by executing the provided function and displaying the result in a dialog.
 
     Args:
         request_function (callable): The function to execute (e.g., creating the database, testing connection).
         page (ft. Page): The page on which to display the result dialog.
-        db_settings (dict): Dictionary containing database settings to pass to the request function.
     """
 
     # Execute the provided function with db_settings and get the result
-    result = request_function(db_settings)
+    result = request_function()
 
     # Create an alert dialog to show the result of the request
     dialog = ft.AlertDialog(
@@ -111,21 +110,21 @@ def settings_elements(content_column: ft.Column, page: ft.Page):
         db_settings['dbname'] = dbname.value
 
         # Call the handle_request function to save the settings
-        handle_request(save_db_settings, page, db_settings)
+        handle_request(lambda: save_db_settings(db_settings), page)
 
     # Button to create the database
-    buton_create_database = ft.FilledButton(text="Create database",
-                                            on_click=lambda e:
-                                            handle_request(create_database, page,
-                                                           db_settings))
+    buton_create_database = ft.FilledButton(
+        text="Create database",
+        on_click=lambda e: handle_request(create_database, page)
+    )
+
     # Button to test the database connection
-    buton_test_connection = ft.FilledButton(text="Test DB connection",
-                                            on_click=lambda e:
-                                            handle_request(test_db_connection, page,
-                                                           db_settings))
+    buton_test_connection = ft.FilledButton(
+        text="Test DB connection",
+        on_click=lambda e: handle_request(test_db_connection, page)
+    )
     # Button to save the database settings
-    save_settings = ft.FilledButton(text="Save",
-                                    on_click=save_settings_event)
+    save_settings = ft.FilledButton(text="Save", on_click=save_settings_event)
 
     # Container for the buttons (create, test connection, and save)
     buttons_container = ft.Container(

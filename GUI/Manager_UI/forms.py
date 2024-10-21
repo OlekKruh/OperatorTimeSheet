@@ -33,11 +33,11 @@ user_form_fields_list = [
 # Company form TextField dict
 company_form_fields_list = [
     ft.TextField(label='Sap Id', **normal_text_field_style),
-    ft.TextField(label='Company Title', **normal_text_field_style),
-    ft.TextField(label='Company HQ Country', **normal_text_field_style),
-    ft.TextField(label='Company Shipping Address', **normal_text_field_style),
-    ft.TextField(label='Contact Phone number', **normal_text_field_style),
-    ft.TextField(label='Contact Email', **normal_text_field_style),
+    ft.TextField(label='Company title', **normal_text_field_style),
+    ft.TextField(label='Company HQ country', **normal_text_field_style),
+    ft.TextField(label='Company shipping address', **normal_text_field_style),
+    ft.TextField(label='Contact phone number', **normal_text_field_style),
+    ft.TextField(label='Contact email', **normal_text_field_style),
 ]
 
 # Enclosure form TextField, Checkbox, Dropdown dict
@@ -83,17 +83,17 @@ enclosure_form_fields_list = [
 # Machine form TextField dict
 machine_form_fields_list = [
     ft.TextField(label='Sap Id', **normal_text_field_style),
-    ft.TextField(label='Machine Title', **normal_text_field_style),
-    ft.TextField(label='Machine Serial Number', **normal_text_field_style),
-    ft.TextField(label='Machine Manufacturer', **normal_text_field_style),
-    ft.TextField(label='Machine Year Production Date', **normal_text_field_style),
+    ft.TextField(label='Machine title', **normal_text_field_style),
+    ft.TextField(label='Machine serial number', **normal_text_field_style),
+    ft.TextField(label='Machine manufacturer', **normal_text_field_style),
+    ft.TextField(label='Machine year production', **normal_text_field_style),
 ]
 
 # Operator form TextField dict
 operator_form_fields_list = [
     ft.TextField(label='Operator Name', **normal_text_field_style),
     ft.TextField(label='Operator skill level', **normal_text_field_style),
-    ft.TextField(label='Operator Contact Phone', **normal_text_field_style),
+    ft.TextField(label='Operator contact phone', **normal_text_field_style),
 ]
 
 # Order form TextField dict
@@ -105,6 +105,7 @@ order_form_fields_list = [
     ft.TextField(label='Operations quantity', **normal_text_field_style),
     ft.TextField(label='Operations descriptions', multiline=True, **normal_text_field_style),
     ft.TextField(label='Order cost in PLN', **normal_text_field_style),
+    ft.TextField(label='Order received date', **normal_text_field_style),
 ]
 
 

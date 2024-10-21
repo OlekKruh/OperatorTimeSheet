@@ -64,6 +64,7 @@ class Order(Base):
     operation = Column(SmallInteger, nullable=False)
     operation_description = Column(VARCHAR(250), nullable=False)
     order_cost = Column(Integer, nullable=False)
+    order_received_date = Column(Date, nullable=False)
 
     company = relationship('Company')
     enclosure = relationship('Enclosure')
