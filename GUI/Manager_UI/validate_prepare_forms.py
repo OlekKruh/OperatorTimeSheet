@@ -99,7 +99,7 @@ def validate_company_form(page, fields_dict):
 def validate_operator_form(page, fields_dict):
     operator_name = fields_dict.get('Operator Name')
     skill = fields_dict.get('Operator skill level')
-    contact_phone = fields_dict.get('Operator contact phone')
+    # contact_phone = fields_dict.get('Operator contact phone')
 
     if not operator_name:
         show_alert_dialog(page, "Operator Name is required.")
@@ -107,14 +107,14 @@ def validate_operator_form(page, fields_dict):
     if not skill:
         show_alert_dialog(page, "Operator skill level is required.")
         return
-    if not contact_phone:
-        show_alert_dialog(page, "Operator contact phone is required.")
-        return
+    # if not contact_phone:
+    #     show_alert_dialog(page, "Operator contact phone is required.")
+    #     return
 
     return {
         'operator_name': operator_name,
         'skill': skill,
-        'contact_phone': contact_phone
+        # 'contact_phone': contact_phone
     }
 
 

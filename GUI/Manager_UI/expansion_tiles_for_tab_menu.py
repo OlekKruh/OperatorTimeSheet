@@ -1,7 +1,10 @@
 import flet as ft
-from DataBase.models import Order, Company, Operator, Machine, Enclosure, Users
+from sqlalchemy.orm import Session
+
+from DataBase.models import Order, Company, Operator, Machine, Enclosure, Users, TimeSheet, ChangeLog
 from .crud_buttons import create_save_button, create_clear_button
-from .forms import (
+from .data_tables import create_data_table_automatically
+from .form_fields import (
     order_form_fields_list,
     enclosure_form_fields_list,
     company_form_fields_list,
@@ -95,24 +98,47 @@ def create_new_expansion_tile(tab_title: str, validate_form):
     )
 
 
-def delete_update_expansion_tile(tab_title: str):
+def delete_update_expansion_tile(tab_title: str, session: Session):
     """
     Creates an expansion tile for deleting or updating an entity.
 
     Args:
         tab_title (str): The title of the tab to be displayed, e.g., "Orders", "Companies", etc.
-
+        session (Session): Сессия SQLAlchemy для взаимодействия с базой данных.
     Returns:
         ft.ExpansionTile: ExpansionTile for deleting or updating an entity.
     """
+
+    # Словарь моделей по заголовкам вкладок
+    model_mapping = {
+        'Orders': Order,
+        'Companies': Company,
+        'Operators': Operator,
+        'Machines': Machine,
+        'Enclosure': Enclosure,
+        'Users': Users,
+        'TimeSheet': TimeSheet,
+        'ChangeLog': ChangeLog,
+    }
+
+    # Получаем модель по названию вкладки
+    model = model_mapping.get(tab_title)
+
+    if not model:
+        raise ValueError(f"Unsupported tab title: {tab_title}")
+
+    # Создаем DataTable автоматически для выбранной модели
+    data_table = create_data_table_automatically(model, session)
+
     return ft.ExpansionTile(
         title=ft.Text(f'Delete/Update {tab_title}', size=18),
         affinity=ft.TileAffinity.LEADING,
         collapsed_text_color=ft.colors.WHITE,
         text_color=ft.colors.WHITE,
+        initially_expanded=True,
         controls=[
             ft.ListTile(title=ft.Text(f'Select a row to modify or delete {tab_title}.')),
-            ft.ListTile(title=ft.Text("IN PROGRESS"))  # Здесь нужно заменить на актуальный функционал
+            data_table  # Вставляем таблицу данных
         ]
     )
 
@@ -140,9 +166,9 @@ def form_selection(tab_title: str):
             return machine_form_fields_list  # Возвращаем список полей
         case 'Users':
             return user_form_fields_list  # Возвращаем список полей
-        case 'TimeSheet':
-            return []  # Пустой список для временных данных
-        case 'ChangeLog':
-            return []  # Пустой список для временных данных
+        # case 'TimeSheet':
+        #     return []  # Пустой список для временных данных
+        # case 'ChangeLog':
+        #     return []  # Пустой список для временных данных
         case _:
             return []

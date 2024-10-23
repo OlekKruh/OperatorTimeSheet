@@ -61,7 +61,7 @@ class Order(Base):
     enclosure_id = Column(Integer, ForeignKey('enclosure.enclosure_id'), nullable=False)
     variant = Column(VARCHAR(30), nullable=False)
     order_quantity = Column(SmallInteger, nullable=False)
-    operation = Column(SmallInteger, nullable=False)
+    operation_quantity = Column(SmallInteger, nullable=False)
     operation_description = Column(VARCHAR(250), nullable=False)
     order_cost = Column(Integer, nullable=False)
     order_received_date = Column(Date, nullable=False)

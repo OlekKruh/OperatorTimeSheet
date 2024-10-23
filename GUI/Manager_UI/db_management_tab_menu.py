@@ -1,4 +1,6 @@
 import flet as ft
+
+from DataBase.db_engine import get_engine, get_session
 from .expansion_tiles_for_tab_menu import create_new_expansion_tile, delete_update_expansion_tile
 from .validate_prepare_forms import (
     validate_user_form,
@@ -9,7 +11,9 @@ from .validate_prepare_forms import (
     validate_machine_form
 )
 
-name = 'DB manager'
+# Создаём движок и сессию
+engine = get_engine()  # Настройки базы данных загружаются автоматически
+session = get_session(engine)  # Создание сессии
 
 
 def db_management_tab_menu(user_role: str):
@@ -25,9 +29,12 @@ def db_management_tab_menu(user_role: str):
     tabs = [
         ft.Tab(
             text='TimeSheet',
-            content=ft.ListTile(
-                    title=ft.Text("TimeSheet viewing is currently under development")
-                ),
+            content=ft.Column(
+                controls=[
+                    delete_update_expansion_tile("TimeSheet", session)
+                ],
+                scroll=ft.ScrollMode.ALWAYS
+            ),
             icon=ft.icons.TABLE_ROWS_ROUNDED,
         ),
         ft.Tab(
@@ -35,7 +42,7 @@ def db_management_tab_menu(user_role: str):
             content=ft.Column(
                 controls=[
                     create_new_expansion_tile("Orders", validate_order_form),
-                    delete_update_expansion_tile("Orders")
+                    delete_update_expansion_tile("Orders", session)
                 ],
                 scroll=ft.ScrollMode.ALWAYS
             ),
@@ -46,7 +53,7 @@ def db_management_tab_menu(user_role: str):
             content=ft.Column(
                 controls=[
                     create_new_expansion_tile("Enclosure", validate_enclosure_form),
-                    delete_update_expansion_tile("Enclosure")
+                    delete_update_expansion_tile("Enclosure", session)
                 ],
                 scroll=ft.ScrollMode.ALWAYS
             ),
@@ -57,7 +64,7 @@ def db_management_tab_menu(user_role: str):
             content=ft.Column(
                 controls=[
                     create_new_expansion_tile("Companies", validate_company_form),
-                    delete_update_expansion_tile("Companies")
+                    delete_update_expansion_tile("Companies", session)
                 ],
                 scroll=ft.ScrollMode.ALWAYS
             ),
@@ -68,7 +75,7 @@ def db_management_tab_menu(user_role: str):
             content=ft.Column(
                 controls=[
                     create_new_expansion_tile("Operators", validate_operator_form),
-                    delete_update_expansion_tile("Operators")
+                    delete_update_expansion_tile("Operators", session)
                 ],
                 scroll=ft.ScrollMode.ALWAYS
             ),
@@ -79,7 +86,7 @@ def db_management_tab_menu(user_role: str):
             content=ft.Column(
                 controls=[
                     create_new_expansion_tile("Machines", validate_machine_form),
-                    delete_update_expansion_tile("Machines")
+                    delete_update_expansion_tile("Machines", session)
                 ],
                 scroll=ft.ScrollMode.ALWAYS
             ),
@@ -95,7 +102,7 @@ def db_management_tab_menu(user_role: str):
                 content=ft.Column(
                     controls=[
                         create_new_expansion_tile("Users", validate_user_form),
-                        delete_update_expansion_tile("Users")
+                        delete_update_expansion_tile("Users", session)
                     ],
                     scroll=ft.ScrollMode.ALWAYS
                 ),
@@ -105,8 +112,11 @@ def db_management_tab_menu(user_role: str):
         tabs.append(
             ft.Tab(
                 text='ChangeLog',
-                content=ft.ListTile(
-                    title=ft.Text("ChangeLog viewing is currently under development")
+                content=ft.Column(
+                    controls=[
+                        delete_update_expansion_tile("ChangeLog", session)
+                    ],
+                    scroll=ft.ScrollMode.ALWAYS
                 ),
                 icon=ft.icons.HISTORY,
             )

@@ -91,16 +91,19 @@ def handle_save(e, form_fields_list, validate_func, model):
         engine = get_engine()  # Создаём движок
         session = get_session(engine)  # Создаём сессию
 
-        # Удаляем первичный ключ из данных перед проверкой на дубликаты
-        primary_key_column = get_primary_key_column(model)
-        if primary_key_column in validated_data:
-            validated_data.pop(primary_key_column)
+        try:
+            # Удаляем первичный ключ из данных перед проверкой на дубликаты
+            primary_key_column = get_primary_key_column(model)
+            if primary_key_column in validated_data:
+                validated_data.pop(primary_key_column)
 
-        # Проверка на существование записи с такими же полями
-        if record_exists(session, model, **validated_data):
-            show_alert_dialog(e.page, "Record with the same data already exists.")
-            return
+            # Проверка на существование записи с такими же полями
+            if record_exists(session, model, **validated_data):
+                show_alert_dialog(e.page, "Record with the same data already exists.")
+                return
 
-        # Если запись не существует, сохраняем её
-        create_record(session, model, **validated_data)
-        show_alert_dialog(e.page, "Record saved successfully")
+            # Если запись не существует, сохраняем её
+            create_record(session, model, **validated_data)
+            show_alert_dialog(e.page, "Record saved successfully")
+        finally:
+            session.close()

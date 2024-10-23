@@ -93,7 +93,7 @@ machine_form_fields_list = [
 operator_form_fields_list = [
     ft.TextField(label='Operator Name', **normal_text_field_style),
     ft.TextField(label='Operator skill level', **normal_text_field_style),
-    ft.TextField(label='Operator contact phone', **normal_text_field_style),
+    # ft.TextField(label='Operator contact phone', **normal_text_field_style),
 ]
 
 # Order form TextField dict
