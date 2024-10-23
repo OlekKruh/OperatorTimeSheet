@@ -61,7 +61,7 @@ class Order(Base):
     enclosure_id = Column(Integer, ForeignKey('enclosure.enclosure_id'), nullable=False)
     variant = Column(VARCHAR(30), nullable=False)
     order_quantity = Column(SmallInteger, nullable=False)
-    operation = Column(SmallInteger, nullable=False)
+    operation_quantity = Column(SmallInteger, nullable=False)
     operation_description = Column(VARCHAR(250), nullable=False)
     order_cost = Column(Integer, nullable=False)
     order_received_date = Column(Date, nullable=False)
@@ -103,3 +103,17 @@ class ChangeLog(Base):
     new_values = Column(VARCHAR(1000), nullable=False)
 
     user = relationship('Users')
+
+
+# Словари для сопоставления заголовков вкладок с моделями и функциями валидации
+model_mapping = {
+    'Order': Order,
+    'Company': Company,
+    'Operator': Operator,
+    'Machine': Machine,
+    'Enclosure': Enclosure,
+    'Users': Users,
+    'TimeSheet': TimeSheet,
+    'ChangeLog': ChangeLog,
+    # Добавь другие модели по мере необходимости
+}

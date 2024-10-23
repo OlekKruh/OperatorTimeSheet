@@ -1,9 +1,16 @@
 from sqlalchemy.orm import Session
 
+from DataBase.event_listener import after_insert_listener
 
-def create_record(session: Session, model, **kwargs):
-    record = model(**kwargs)
+
+def create_record(session, model, **kwargs):
+    """
+    Создает новую запись в базе данных. user_id используется только для логирования.
+    """
+    record = model(**kwargs)  # Создаем запись без user_id
     session.add(record)
+    session.flush()  # Промежуточный коммит, чтобы данные были доступны для слушателя
+
     session.commit()
     return record
 

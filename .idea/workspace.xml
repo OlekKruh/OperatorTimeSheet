@@ -5,8 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit">
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/crud_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/crud_buttons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Login/login_container.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Login/login_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Manager/crud_buttons.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Manager/data_tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Manager/db_management_tab_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Manager/expansion_tiles_for_tab_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Manager/form_fields.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Manager/validate_prepare_forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Timesheet/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/alert_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/db_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/db_engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/History_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/event_listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/History_UI/history_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/History/history_container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/session_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/home_navigation_rail.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Home/home_navigation_rail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/home_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Home/home_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Login_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/History/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Login_UI/login_container.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Login_UI/login_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Login/login_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Home/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/crud_buttons.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/data_tables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/db_management_tab_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/form_fields.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/validate_prepare_forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Search_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Login/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Settings_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Settings_UI/settings_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Settings/settings_container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Statistics_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Search/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Timesheet_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Settings/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Statistics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +58,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -160,7 +199,25 @@
       <workItem from="1729263531176" duration="622000" />
       <workItem from="1729426711094" duration="98000" />
       <workItem from="1729426817264" duration="9421000" />
-      <workItem from="1729528090384" duration="4572000" />
+      <workItem from="1729528090384" duration="5966000" />
+      <workItem from="1729620930553" duration="88000" />
+      <workItem from="1729621026721" duration="6896000" />
+      <workItem from="1729631658967" duration="17000" />
+      <workItem from="1729631810211" duration="2411000" />
+      <workItem from="1729702542695" duration="16396000" />
+      <workItem from="1729884229063" duration="30000" />
+      <workItem from="1729884270770" duration="1533000" />
+      <workItem from="1729948540024" duration="1874000" />
+      <workItem from="1730045264893" duration="597000" />
+      <workItem from="1730139385126" duration="7648000" />
+      <workItem from="1730150026823" duration="5893000" />
+      <workItem from="1730215390563" duration="12390000" />
+      <workItem from="1730238049000" duration="941000" />
+      <workItem from="1730317409787" duration="14915000" />
+      <workItem from="1730410446777" duration="216000" />
+      <workItem from="1730410675654" duration="1952000" />
+      <workItem from="1730460202526" duration="18769000" />
+      <workItem from="1730631278082" duration="1653000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -258,7 +315,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729537668657</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1729540975797</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729540975797</updated>
+    </task>
+    <task id="LOCAL-00014" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1729719104082</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729719104082</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +345,7 @@
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_elements.coverage" NAME="home_elements Coverage Results" MODIFIED="1726508444076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$settings_elements.coverage" NAME="settings_elements Coverage Results" MODIFIED="1727042220113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$login_screen.coverage" NAME="login_screen Coverage Results" MODIFIED="1726342261157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
-    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1729537864360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OperatorTimeSheet$main.coverage" NAME="main Coverage Results" MODIFIED="1730634057238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OperatorTimeSheet$home_screen.coverage" NAME="home_screen Coverage Results" MODIFIED="1726420612680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Interfese" />
   </component>
 </project>

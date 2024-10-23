@@ -1,8 +1,10 @@
 import flet as ft
-from GUI.constants import *
-from GUI.History_UI.history_container import history_elements
-from GUI.Settings_UI.settings_container import settings_elements
-from GUI.Manager_UI.db_management_tab_menu import db_management_tab_menu
+import asyncio
+from core.constants import *
+from DataBase.session_manager import clear_user_session
+from core.History.history_container import history_elements
+from core.Settings.settings_container import settings_elements
+from core.Manager.db_management_tab_menu import db_management_tab_menu
 
 
 def home_elements(page: ft.Page, user_role: str):
@@ -14,12 +16,14 @@ def home_elements(page: ft.Page, user_role: str):
         page (ft.Page): The Flet page object that will display the home screen.
         user_role (str): Role of the logged-in user ('admin', 'manager', 'operator').
     """
-
     # Clean the page before adding new elements
     page.clean()
 
     # Create a column to display the content based on the selected tab
-    content_column = ft.Column()
+    content_column = ft.Column(
+        controls=[],
+        alignment=ft.MainAxisAlignment.START,
+    )
 
     # Define the NavigationRail with its destinations
     rail = ft.NavigationRail(
@@ -66,7 +70,7 @@ def home_elements(page: ft.Page, user_role: str):
                 label_content=ft.Text("Exit")
             ),
         ],
-        on_change=lambda e: on_rail_change(e, content_column, page, user_role, rail),
+        on_change=lambda e: asyncio.run(on_rail_change(e, content_column, page, user_role, rail)),
     )
 
     # Add the Navigation Rail and content column to the page layout
@@ -103,7 +107,7 @@ def home_elements(page: ft.Page, user_role: str):
     page.update()
 
 
-def on_rail_change(e, content_column, page, user_role: str, rail: ft.NavigationRail):
+async def on_rail_change(e, content_column, page, user_role: str, rail: ft.NavigationRail):
     """
     Handles the logic for updating the content area when a new tab is selected
     in the NavigationRail, while respecting user role permissions.
@@ -112,7 +116,7 @@ def on_rail_change(e, content_column, page, user_role: str, rail: ft.NavigationR
         e: Event object containing the selected tab index.
         content_column: The column to display the selected tab's content.
         page: The Flet page object to allow window control actions like closing.
-        user_role: Role of the logged-in user ('admin', 'manager', 'operator').
+        user_role: Role of the logged-in user ('admin', 'superuser', 'manager', 'operator').
         rail: The NavigationRail component for controlling navigation.
     """
     selected_index = e.control.selected_index
@@ -120,57 +124,65 @@ def on_rail_change(e, content_column, page, user_role: str, rail: ft.NavigationR
     # Clear the current content
     content_column.controls.clear()
 
+    # Add a loading indicator centered in the container
+    loading_indicator = ft.ProgressRing()
+    content_column.controls.append(
+        ft.Container(
+            content=loading_indicator,
+            alignment=ft.alignment.center,  # Центрируем колесо загрузки
+            expand=True
+        )
+    )
+    content_column.update()
+
     # Create a reusable Access Denied dialog
     def show_access_denied_dialog(message):
-        dialog = ft.AlertDialog(
-            title=ft.Text("Access Denied"),
-            content=ft.Text(message),
-            actions=[ft.TextButton("OK", on_click=lambda _: close_dialog(dialog))],
-            actions_alignment=ft.MainAxisAlignment.END,
-            modal=True
-        )
-        page.dialog = dialog
-        dialog.open = True
-        page.update()
+        content_column.controls.clear()
+        content_column.controls.append(ft.Text(message, size=20, color=ft.colors.RED))
+        content_column.update()
 
-    # Function to close the dialog and revert to the first tab (index 0)
-    def close_dialog(dialog):
-        dialog.open = False
-        page.update()
-        rail.selected_index = 0
-        rail.update()
-
-    # Switch based on the selected index and check user role permissions
+    # Load content based on selected tab index and user role permissions
     match selected_index:
         case 0:
             # History tab
+            content_column.controls.clear()
             history_elements(content_column)
         case 1:
-            # Input tab
-            content_column.controls.append(ft.Text("Timesheet"))
+            # Timesheet tab
+            content_column.controls.clear()
+            content_column.controls.append(ft.Text("Timesheet Content", size=20))
         case 2:
             # Statistics tab
-            content_column.controls.append(ft.Text("Statistics Content"))
+            content_column.controls.clear()
+            content_column.controls.append(ft.Text("Statistics Content", size=20))
         case 3:
-            # Create Project tab (only available to 'admin' and 'manager')
+            # DB Manager tab (only available to 'admin' and 'manager')
             if user_role == 'operator':
-                show_access_denied_dialog("Access Denied: You do not have access to projects")
+                show_access_denied_dialog("Access Denied: You do not have access to DB Manager")
             else:
+                content_column.controls.clear()
                 db_manager_tabs = db_management_tab_menu(user_role)
                 content_column.controls.append(db_manager_tabs)
         case 4:
             # Search tab
-            content_column.controls.append(ft.Text("Search Content"))
+            content_column.controls.clear()
+            content_column.controls.append(ft.Text("Search Content", size=20))
         case 5:
-            # Settings tab (only available to 'admin')
+            # Settings tab (only available to 'admin' or 'super_user')
             if user_role not in ['admin', 'super_user']:
-                show_access_denied_dialog("Access Denied: You do not have access to settings")
+                show_access_denied_dialog("Access Denied: You do not have access to Settings")
             else:
+                content_column.controls.clear()
                 settings_elements(content_column, page)
         case 6:
             # Exit the application
+            clear_user_session()
             page.window_close()
 
-    # Update the content column with the new content
+    # Если контент пуст, показать заглушку
+    if not content_column.controls:
+        content_column.controls.append(ft.Text("No content available", size=20, color=ft.colors.GREY))
+
+    # Обновление содержимого
     content_column.update()
     page.update()

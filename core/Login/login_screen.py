@@ -1,6 +1,6 @@
 import flet as ft
-from GUI.Login_UI.login_container import login_elements
-from GUI.constants import *
+from core.Login.login_container import login_elements
+from core.constants import *
 
 
 def login_screen(page: ft.Page):

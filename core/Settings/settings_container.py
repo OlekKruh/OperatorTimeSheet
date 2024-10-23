@@ -1,6 +1,6 @@
 import flet as ft
-from GUI.constants import *
-from DataBase.db_engine import create_database, test_db_connection, save_db_settings, load_db_settings
+from core.constants import *
+from DataBase.db_engine import create_database, test_db_connection, save_db_settings, load_db_settings #delete_database
 
 # A message placeholder for displaying the result of operations
 check_result_masege = ft.Text("")
@@ -11,11 +11,11 @@ db_settings = load_db_settings()
 # If loading settings failed (not a dict), assign default settings
 if not isinstance(db_settings, dict):
     db_settings = {
-        'host': 'localhost',
-        'port': '5432',
-        'user': 'User',
-        'password': '12345',
-        'dbname': 'Noname_db',
+        'host': '',
+        'port': '',
+        'user': '',
+        'password': '',
+        'dbname': '',
     }
 
 
@@ -123,6 +123,13 @@ def settings_elements(content_column: ft.Column, page: ft.Page):
         text="Test DB connection",
         on_click=lambda e: handle_request(test_db_connection, page)
     )
+
+    # Button to delete the database
+    # buton_delete_database = ft.FilledButton(
+    #     text="Delete database",
+    #     on_click=lambda e: handle_request(delete_database, page)
+    # )
+
     # Button to save the database settings
     save_settings = ft.FilledButton(text="Save", on_click=save_settings_event)
 
@@ -133,6 +140,7 @@ def settings_elements(content_column: ft.Column, page: ft.Page):
                 buton_create_database,
                 buton_test_connection,
                 save_settings,
+                # buton_delete_database,
             ],
             alignment=ft.MainAxisAlignment.START,
         ),

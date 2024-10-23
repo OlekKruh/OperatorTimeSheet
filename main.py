@@ -1,16 +1,18 @@
 import flet as ft
 from flet_core import TextAlign
-
-from GUI.Home_UI.home_screen import home_screen
-from GUI.Login_UI.login_screen import login_screen
+from core.Home.home_screen import home_screen
 from DataBase.db_engine import load_db_settings
+from DataBase.event_listener import register_listeners
+from core.Login.login_screen import login_screen
+from DataBase.session_manager import set_user_session
+
+register_listeners()
 
 
-def main(page: ft.Page, user_role: str = 'super_user'):
-
+def main(page: ft.Page):
     dialog = ft.AlertDialog(
         content=ft.Text("Failed to load database settings.\n"
-                        "Only superuser can log in.",
+                        "Please contact the system administrator.",
                         color="red",
                         size=14,
                         text_align=TextAlign.CENTER,
@@ -25,12 +27,14 @@ def main(page: ft.Page, user_role: str = 'super_user'):
     db_settings = load_db_settings()
 
     if isinstance(db_settings, dict):
-        home_screen(page, user_role)
+        set_user_session(user_id=0, user_role='super_user')
+        home_screen(page, user_role='super_user')
         #login_screen(page)
     else:
         page.dialog = dialog
         dialog.open = True
-        home_screen(page, user_role)
+        set_user_session(user_id=0, user_role='super_user')
+        home_screen(page, user_role='super_user')
         #login_screen(page)
         page.update()
 
