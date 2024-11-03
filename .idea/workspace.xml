@@ -4,46 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/core/Login/login_container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Login/login_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Manager/crud_buttons.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Manager/data_tables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Manager/db_management_tab_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Manager/expansion_tiles_for_tab_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Manager/form_fields.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Manager/validate_prepare_forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Timesheet/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/alert_dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/db_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/db_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/History_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/event_listener.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/History_UI/history_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/History/history_container.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/session_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/home_navigation_rail.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Home/home_navigation_rail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Home_UI/home_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Home/home_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Login_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/History/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Login_UI/login_container.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Login_UI/login_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Login/login_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Home/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/crud_buttons.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/data_tables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/db_management_tab_menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/expansion_tiles_for_tab_menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/form_fields.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Manager_UI/validate_prepare_forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Search_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Login/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Settings_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Settings_UI/settings_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Settings/settings_container.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Statistics_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Search/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Timesheet_UI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Settings/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Statistics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="962910e4-c301-4c1e-ab1d-98a57fd05d0a" name="Changes" comment="First Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +178,7 @@
       <workItem from="1730410446777" duration="216000" />
       <workItem from="1730410675654" duration="1952000" />
       <workItem from="1730460202526" duration="18769000" />
-      <workItem from="1730631278082" duration="1653000" />
+      <workItem from="1730631278082" duration="2606000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -331,11 +292,30 @@
       <option name="project" value="LOCAL" />
       <updated>1729719104082</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1730636307480</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730636307480</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
