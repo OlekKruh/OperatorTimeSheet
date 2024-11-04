@@ -1,8 +1,6 @@
-import json
 from datetime import datetime
-
 import flet as ft
-from sqlalchemy.orm import Session
+from DataBase.cache_manager import get_cache
 
 # Карты сопоставления для заголовков столбцов
 USER_FIELD_TITLE_MAPPING = {
@@ -89,50 +87,22 @@ CHANGELOG_FIELD_TITLE_MAPPING = {
 
 
 def format_datetime(value):
-    """
-    Форматирует дату и время, убирая миллисекунды.
-    """
+    """Форматирует дату и время, убирая миллисекунды."""
     if isinstance(value, datetime):
         return value.strftime("%d-%m-%Y %H:%M:%S")  # Формат без миллисекунд
     return str(value)  # Возвращаем значение как есть, если это не datetime
 
 
-def format_dict(value):
-    """
-    Форматирует словарь в читаемый формат JSON.
-    """
-    if isinstance(value, dict):
-        return json.dumps(value, indent=4, ensure_ascii=False)  # Читаемый JSON с отступами
-    return str(value)
-
-
-def load_data_from_db(model, session: Session):
-    """
-    Загружает данные из базы данных для заданной модели.
-
-    Args:
-        model: Модель SQLAlchemy, на основе которой строится таблица.
-        session: Сессия SQLAlchemy для выполнения запросов.
-
-    Returns:
-        list: Список записей модели.
-    """
-    try:
-        # Загружаем все записи модели
-        records = session.query(model).all()
-        return records
-    except Exception as e:
-        print(f"Error loading data: {e}")
-        return []
-
-
 # Функция для автоматического создания DataTable на основе модели SQLAlchemy
-def create_data_table_automatically(model, session: Session):
+def create_data_table_automatically(model):
     """
     Автоматически создает DataTable на основе модели SQLAlchemy с настройками текста.
     """
-    # Загружаем все записи из таблицы модели
-    records = load_data_from_db(model, session)
+    # Используем название модели как имя таблицы для кеша
+    tab_name = model.__tablename__
+
+    # Загружаем данные из кеша или базы данных
+    records = get_cache(tab_name)
 
     # Определение соответствующей карты заголовков
     field_title_mapping = get_field_title_mapping_for_model(model)
@@ -147,8 +117,8 @@ def create_data_table_automatically(model, session: Session):
                     color="black",
                     text_align=ft.TextAlign.CENTER,
                 ),
-                alignment=ft.alignment.center,  # Центрируем заголовки колонок
-                width=90  # Задаем фиксированную ширину (можете подкорректировать под нужный размер)
+                alignment=ft.alignment.center,
+                width=90
             ),
             tooltip=field_title_mapping.get(column.name, column.name),
         )
@@ -156,22 +126,22 @@ def create_data_table_automatically(model, session: Session):
     ]
 
     # Создаем строки данных, извлекая значения атрибутов из каждой записи
-    pading_n = 2
+    padding_n = 2
     rows = [
         ft.DataRow(
             cells=[
                 ft.DataCell(
                     ft.Container(
                         content=ft.Text(
-                            value=format_dict(getattr(record, column.name))
+                            value=getattr(record, column.name)  # format_dict()
                             if column.name in ["old_values", "new_values"] else
                             format_datetime(getattr(record, column.name)),
                             size=12,
                             color="black",
                             text_align=ft.TextAlign.CENTER,
                         ),
-                        alignment=ft.alignment.center,  # Центрируем текст в ячейках
-                        padding=ft.Padding(pading_n, pading_n, pading_n, pading_n),
+                        alignment=ft.alignment.center,
+                        padding=ft.Padding(padding_n, padding_n, padding_n, padding_n),
                     )
                 )
                 for column in model.__table__.columns

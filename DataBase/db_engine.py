@@ -50,7 +50,7 @@ def get_db_session():
     Контекстный менеджер для получения сессии базы данных.
     """
     engine = get_engine()
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine, expire_on_commit=False)
     session = Session()
     try:
         yield session

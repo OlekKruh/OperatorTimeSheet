@@ -107,13 +107,26 @@ class ChangeLog(Base):
 
 # Словари для сопоставления заголовков вкладок с моделями и функциями валидации
 model_mapping = {
-    'Order': Order,
-    'Company': Company,
-    'Operator': Operator,
-    'Machine': Machine,
-    'Enclosure': Enclosure,
-    'Users': Users,
-    'TimeSheet': TimeSheet,
-    'ChangeLog': ChangeLog,
-    # Добавь другие модели по мере необходимости
+    'users': Users,
+    'operator': Operator,
+    'company': Company,
+    'enclosure': Enclosure,
+    'machine': Machine,
+    'order': Order,
+    'time_sheet': TimeSheet,
+    'change_log': ChangeLog,
 }
+
+pretty_table_names = {
+    'users': 'Users',
+    'operator': 'Operator',
+    'company': 'Company',
+    'enclosure': 'Enclosure',
+    'machine': 'Machine',
+    'order': 'Order',
+    'time_sheet': 'TimeSheet',
+    'change_log': 'ChangeLog'
+}
+
+def get_pretty_name(table_name):
+    return pretty_table_names.get(table_name, table_name)

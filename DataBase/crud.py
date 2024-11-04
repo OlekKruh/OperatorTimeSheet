@@ -1,17 +1,19 @@
 from sqlalchemy.orm import Session
+from .cache_manager import add_to_cache, update_cache, delete_from_cache, get_cache
 
-from DataBase.event_listener import after_insert_listener
+
+def get_records(tab_name):
+    """Получает записи из кеша для указанной таблицы."""
+    return get_cache(tab_name)
 
 
 def create_record(session, model, **kwargs):
-    """
-    Создает новую запись в базе данных. user_id используется только для логирования.
-    """
+    """Создает новую запись в базе данных."""
     record = model(**kwargs)  # Создаем запись без user_id
     session.add(record)
     session.flush()  # Промежуточный коммит, чтобы данные были доступны для слушателя
-
     session.commit()
+    add_to_cache(model.__tablename__, record)
     return record
 
 
@@ -28,6 +30,7 @@ def update_record(session: Session, model, filters, update_data):
         for key, value in update_data.items():
             setattr(record, key, value)
         session.commit()
+        update_cache(model.__tablename__, record.id, record)
     return record
 
 
@@ -36,4 +39,5 @@ def delete_record(session: Session, model, filters):
     if record:
         session.delete(record)
         session.commit()
+        delete_from_cache(model.__tablename__, record.id)
     return record
