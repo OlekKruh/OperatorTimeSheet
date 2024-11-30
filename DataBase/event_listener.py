@@ -1,5 +1,5 @@
 import json
-import datetime
+from datetime import datetime
 from sqlalchemy import event, insert
 from DataBase.models import ChangeLog, Base
 from DataBase.session_manager import get_user_session
@@ -16,10 +16,10 @@ def create_log_entry(mapper, connection, target, operation_type, old_values=None
         'table_name': table_name,
         'operation_type': operation_type,
         'record_id': record_id,
-        'changed_at': datetime.datetime.now(datetime.UTC),
+        'timestamp': datetime.now(),
         'user_id': user_id,
-        'old_values': json.dumps(old_values) if old_values else '',
-        'new_values': json.dumps(new_values) if new_values else ''
+        'old_values': json.dumps(old_values) if old_values else None,
+        'new_values': json.dumps(new_values) if new_values else None
     }
 
     connection.execute(insert(ChangeLog), log_entry)

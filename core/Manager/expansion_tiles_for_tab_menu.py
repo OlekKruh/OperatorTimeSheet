@@ -1,6 +1,6 @@
 import flet as ft
 from DataBase.models import model_mapping, get_pretty_name
-from .crud_buttons import create_save_button, create_clear_button
+from .crud_buttons import create_button
 from .data_tables import create_data_table_automatically
 from .form_fields import (
     order_form_fields_list,
@@ -85,8 +85,9 @@ def create_expansion_tile(tab_title: str):
     if not validate_func:
         raise ValueError(f"Validation function not found for tab title: {tab_title}")
 
-    save_button = create_save_button(form_fields_list, validate_func, model_mapping[tab_title])
-    clear_button = create_clear_button(form_fields_list)
+    save_button = create_button('save', form_fields_list,
+                                validate_func, model_mapping[tab_title])
+    clear_button = create_button('clear', form_fields_list)
 
     buttons_row = ft.Row(
         controls=[save_button, clear_button],

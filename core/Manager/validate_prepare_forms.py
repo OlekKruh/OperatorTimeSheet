@@ -1,5 +1,5 @@
 import bcrypt
-from ..alert_dialog import show_alert_dialog
+from ..dialogs import show_alert_dialog
 
 
 def hash_password(password):

@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, Date, DateTime, SmallInteger, VARCHAR, Boolean
 from sqlalchemy.orm import relationship, declarative_base
-import datetime
+from datetime import datetime
 
 Base = declarative_base()
 
@@ -97,10 +97,10 @@ class ChangeLog(Base):
     table_name = Column(VARCHAR(50), nullable=False)
     record_id = Column(Integer, nullable=False)
     operation_type = Column(VARCHAR(10), nullable=False)
-    changed_at = Column(DateTime, default=datetime.datetime.now(datetime.UTC), nullable=False)
+    timestamp = Column(DateTime, default=datetime.now(), nullable=False)
     user_id = Column(Integer, ForeignKey('users.user_id', ondelete='CASCADE'), nullable=False)
-    old_values = Column(VARCHAR(1000), nullable=False)
-    new_values = Column(VARCHAR(1000), nullable=False)
+    old_values = Column(VARCHAR(1000), nullable=True)
+    new_values = Column(VARCHAR(1000), nullable=True)
 
     user = relationship('Users')
 
@@ -127,6 +127,7 @@ pretty_table_names = {
     'time_sheet': 'TimeSheet',
     'change_log': 'ChangeLog'
 }
+
 
 def get_pretty_name(table_name):
     return pretty_table_names.get(table_name, table_name)

@@ -1,6 +1,7 @@
 from datetime import datetime
 import flet as ft
-from DataBase.cache_manager import get_cache
+from DataBase.cache_manager import get_data_from_cache
+from ..dialogs import show_communication_dialog
 
 # Карты сопоставления для заголовков столбцов
 USER_FIELD_TITLE_MAPPING = {
@@ -79,7 +80,7 @@ CHANGELOG_FIELD_TITLE_MAPPING = {
     'table_name': "Table\nName",
     'record_id': "Record\nID",
     'operation_type': "Operation\nType",
-    'changed_at': "Changed\nAt",
+    'timestamp': "Timestamp",
     'user_id': "User\nID",
     'old_values': "Old\nValues",
     'new_values': "New\nValues"
@@ -101,8 +102,8 @@ def create_data_table_automatically(model):
     # Используем название модели как имя таблицы для кеша
     tab_name = model.__tablename__
 
-    # Загружаем данные из кеша или базы данных
-    records = get_cache(tab_name)
+    # Загружаем данные из кеша
+    cache_data = get_data_from_cache(tab_name)
 
     # Определение соответствующей карты заголовков
     field_title_mapping = get_field_title_mapping_for_model(model)
@@ -120,7 +121,6 @@ def create_data_table_automatically(model):
                 alignment=ft.alignment.center,
                 width=90
             ),
-            tooltip=field_title_mapping.get(column.name, column.name),
         )
         for column in model.__table__.columns
     ]
@@ -133,7 +133,7 @@ def create_data_table_automatically(model):
                 ft.DataCell(
                     ft.Container(
                         content=ft.Text(
-                            value=getattr(record, column.name)  # format_dict()
+                            value=getattr(record, column.name)
                             if column.name in ["old_values", "new_values"] else
                             format_datetime(getattr(record, column.name)),
                             size=12,
@@ -145,9 +145,11 @@ def create_data_table_automatically(model):
                     )
                 )
                 for column in model.__table__.columns
-            ]
+            ],
+            selected=True,
+            on_select_changed=lambda e, record=record: show_communication_dialog(e, record)
         )
-        for record in records
+        for record in cache_data
     ]
 
     # Возвращаем готовую таблицу
@@ -155,6 +157,7 @@ def create_data_table_automatically(model):
         columns=columns,
         rows=rows,
         bgcolor='white',
+        data_row_color={ft.ControlState.HOVERED: ft.colors.GREEN_200},
         border=ft.border.all(2, "black"),
         vertical_lines=ft.BorderSide(1, "black"),
         horizontal_lines=ft.BorderSide(1, "black"),

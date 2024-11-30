@@ -4,7 +4,7 @@ from DataBase.db_engine import get_db_session
 from DataBase.models import Users
 from DataBase.session_manager import set_user_session
 from core.Home.home_screen import home_screen
-from ..alert_dialog import show_alert_dialog
+from ..dialogs import show_alert_dialog
 
 
 def check_login(page, username_input, password_input):
